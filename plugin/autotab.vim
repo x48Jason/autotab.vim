@@ -45,7 +45,12 @@ function! s:setup_autotab() abort
 		setlocal softtabstop=8
 		setlocal shiftwidth=8
 	endif
-
+	if match(b:project_root, 'cscope') >= 0
+		setlocal noexpandtab
+		setlocal tabstop=8
+		setlocal softtabstop=4
+		setlocal shiftwidth=4
+	endif
 endfunc
 
 
